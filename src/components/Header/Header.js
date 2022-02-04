@@ -21,6 +21,7 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
+        <Side />
       </MainHeader>
     </header>
   );
@@ -29,19 +30,37 @@ const Header = () => {
 const MainHeader = styled.div`
   padding: 0 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
 `;
 
-const Nav = styled.nav``;
+const Side = styled.div`
+  /* Spaceholder element to align Nav to center */
+`
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-self: center;
+`;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
+  margin: 0 32px;
 
   &:first-of-type {
     color: ${COLORS.secondary};
+  }
+
+  &:hover {
+    filter: brightness(150%);
   }
 `;
 
